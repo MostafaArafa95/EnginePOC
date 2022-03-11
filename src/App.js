@@ -1,11 +1,14 @@
 import { View, Text } from 'react-native'
 import React from 'react'
+import { GestureHandlerRootView } from 'react-native-gesture-handler'
 
 const App = () => {
     return (
-        <View>
-            <Text>App</Text>
-        </View>
+        <GestureHandlerRootView>
+            <View>
+                <Text>App</Text>
+            </View>
+        </GestureHandlerRootView>
     )
 }
 
