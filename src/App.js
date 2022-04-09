@@ -2,18 +2,13 @@ import { View, Text, SafeAreaView, StyleSheet } from 'react-native'
 import React from 'react'
 import { GestureHandlerRootView } from 'react-native-gesture-handler'
 import SwiperScrollView from './components/SwiperScrollView'
+import ControlledView from './components/ControlledView'
 
 const App = () => {
     return (
         <GestureHandlerRootView style={{ flex: 1 }}>
             <SafeAreaView style={{ flex: 1 }}>
-                <SwiperScrollView horizontal={true}>
-                    <View style={styles["box1"]}><Text>Child 1</Text></View>
-                    <View style={styles["box2"]}><Text>Child 2</Text></View>
-                    <View style={styles["box3"]}><Text>Child 3</Text></View>
-                    <View style={styles["box4"]}><Text>Child 4</Text></View>
-
-                </SwiperScrollView>
+                <ControlledView />
             </SafeAreaView>
 
         </GestureHandlerRootView>
