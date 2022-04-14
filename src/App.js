@@ -1,14 +1,26 @@
 import { View, Text, SafeAreaView, StyleSheet } from 'react-native'
-import React from 'react'
+import React, { useMemo } from 'react'
 import { GestureHandlerRootView } from 'react-native-gesture-handler'
 import SwiperScrollView from './components/SwiperScrollView'
 import ControlledView from './components/ControlledView'
+import { ControlMind } from './ControlMind'
+import DummyText from './components/DummyText'
+import MindProvider from './components/MindProvider'
 
 const App = () => {
+    const SmartComponent = useMemo(() => {
+        //Ref Provide consumer
+
+        const controlMind = new ControlMind();//FieldManager
+        //Ref provider
+        const ControlledDummyText = MindProvider(DummyText, controlMind);
+        controlMind.saySomething();
+        return ControlledDummyText;
+    }, [])
     return (
         <GestureHandlerRootView style={{ flex: 1 }}>
             <SafeAreaView style={{ flex: 1 }}>
-                <ControlledView />
+                <SmartComponent />
             </SafeAreaView>
 
         </GestureHandlerRootView>

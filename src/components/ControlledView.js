@@ -5,7 +5,6 @@ import DummyText from './DummyText';
 const ControlledView = () => {
     //const [displayText, setDisplayText] = useState("");
     const [ignored, updateSelf] = useReducer(x => x + 1, 0);
-    React.createElement()
     const textRef = useRef(null);
     const displayText = useRef("Hello")
     return (
